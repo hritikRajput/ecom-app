@@ -1,6 +1,5 @@
 const products = [
   {
-    id: "9780345391803",
     name: "Jurassic Park",
     author: "Michael Crichton",
     coverImage:
@@ -17,7 +16,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780061120084",
     name: "To Kill a Mockingbird",
     author: "Harper Lee",
     coverImage:
@@ -34,7 +32,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780590353427",
     name: "Harry Potter and the Sorcerer's Stone",
     author: "J.K. Rowling",
     coverImage:
@@ -51,7 +48,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062316097",
     name: "The Nightingale",
     author: "Kristin Hannah",
     coverImage:
@@ -68,7 +64,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -85,7 +80,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -102,7 +96,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -119,7 +112,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -136,7 +128,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673319",
     name: "Unbroken",
     author: "Laura Hillenbrand",
     coverImage:
@@ -153,7 +144,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735210738",
     name: "The Underground Railroad",
     author: "Colson Whitehead",
     coverImage:
@@ -170,7 +160,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780061122415",
     name: "The Alchemist",
     author: "Paulo Coelho",
     coverImage:
@@ -187,7 +176,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780743273565",
     name: "A Thousand Splendid Suns",
     author: "Khaled Hosseini",
     coverImage:
@@ -204,7 +192,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062316110",
     name: "The Goldfinch",
     author: "Donna Tartt",
     coverImage:
@@ -221,7 +208,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780385514231",
     name: "The Da Vinci Code",
     author: "Dan Brown",
     coverImage:
@@ -238,7 +224,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780553382563",
     name: "A Game of Thrones",
     author: "George R.R. Martin",
     coverImage:
@@ -255,7 +240,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780374533557",
     name: "Bad Feminist",
     author: "Roxane Gay",
     coverImage:
@@ -272,7 +256,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780812984965",
     name: "The Book Thief",
     author: "Markus Zusak",
     coverImage:
@@ -289,7 +272,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062124265",
     name: "The Martian",
     author: "Andy Weir",
     coverImage:
@@ -306,7 +288,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400079094",
     name: "The Shadow of the Wind",
     author: "Carlos Ruiz Zafón",
     coverImage:
@@ -323,7 +304,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780385537858",
     name: "The Night Circus",
     author: "Erin Morgenstern",
     coverImage:
@@ -340,7 +320,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -357,7 +336,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -374,7 +352,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -391,7 +368,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -408,7 +384,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -425,7 +400,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -442,7 +416,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673319",
     name: "Unbroken",
     author: "Laura Hillenbrand",
     coverImage:
@@ -459,7 +432,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735210738",
     name: "The Underground Railroad",
     author: "Colson Whitehead",
     coverImage:
@@ -476,7 +448,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780061122415",
     name: "The Alchemist",
     author: "Paulo Coelho",
     coverImage:
@@ -493,7 +464,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780743273565",
     name: "A Thousand Splendid Suns",
     author: "Khaled Hosseini",
     coverImage:
@@ -510,7 +480,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -527,7 +496,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -544,7 +512,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -561,7 +528,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -578,7 +544,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -595,7 +560,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -612,7 +576,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -629,7 +592,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -646,7 +608,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -663,7 +624,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -680,7 +640,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -697,7 +656,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -714,7 +672,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -731,7 +688,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -748,7 +704,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -765,7 +720,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -782,7 +736,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -799,7 +752,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -816,7 +768,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -833,7 +784,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -850,7 +800,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -867,7 +816,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -884,7 +832,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -901,7 +848,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -918,7 +864,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -935,7 +880,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -952,7 +896,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -969,7 +912,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -986,7 +928,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -1003,7 +944,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -1020,7 +960,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -1037,7 +976,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
@@ -1054,7 +992,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780735219090",
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
@@ -1071,7 +1008,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9780062564047",
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
@@ -1088,7 +1024,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781501175466",
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
@@ -1105,7 +1040,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781451673289",
     name: "All the Light We Cannot See",
     author: "Anthony Doerr",
     coverImage:
@@ -1122,7 +1056,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400034770",
     name: "The Road",
     author: "Cormac McCarthy",
     coverImage:
@@ -1139,7 +1072,6 @@ const products = [
     isInStock: true,
   },
   {
-    id: "9781400032493",
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
