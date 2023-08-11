@@ -4,7 +4,7 @@ const products = [
     name: "Jurassic Park",
     author: "Michael Crichton",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1529604411i/40604658.jpg",
     description:
       "Jurassic Park is a thrilling science fiction novel that explores the disastrous consequences of recreating dinosaurs through genetic engineering. Set on a remote island, a group of scientists and visitors find themselves facing terrifying and deadly dinosaurs, leading to a fight for survival.",
     price: 9.99,
@@ -21,7 +21,7 @@ const products = [
     name: "To Kill a Mockingbird",
     author: "Harper Lee",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg",
     description:
       "To Kill a Mockingbird is a classic novel set in the 1930s Southern United States. It addresses themes of racial injustice and moral growth through the eyes of young Scout Finch. The story revolves around Scout's father, Atticus Finch, a lawyer who defends an African American man accused of raping a white woman.",
     price: 12.99,
@@ -55,7 +55,7 @@ const products = [
     name: "The Nightingale",
     author: "Kristin Hannah",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg",
     description:
       "The Nightingale is a historical fiction novel set in France during World War II. It follows the lives of two sisters, Vianne and Isabelle, as they navigate the challenges and horrors of war, resistance, and the strength of family bonds.",
     price: 10.49,
@@ -72,7 +72,7 @@ const products = [
     name: "The Kite Runner",
     author: "Khaled Hosseini",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579036753i/77203.jpg",
     description:
       "The Kite Runner is a powerful novel that explores themes of friendship, guilt, and redemption in war-torn Afghanistan. It tells the story of Amir and his journey to confront the haunting memories of his past and find a way to make amends.",
     price: 9.89,
@@ -89,7 +89,7 @@ const products = [
     name: "Becoming",
     author: "Michelle Obama",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1528206996i/38746485.jpg",
     description:
       "Becoming is a captivating memoir by Michelle Obama, the former First Lady of the United States. In this deeply personal book, Michelle Obama shares her journey from her childhood in Chicago to her experiences in the White House, inspiring readers with her strength, grace, and resilience.",
     price: 17.99,
@@ -106,7 +106,7 @@ const products = [
     name: "Circe",
     author: "Madeline Miller",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740.jpg",
     description:
       "Circe is a captivating retelling of Greek mythology, centered around the life of the witch-goddess Circe. It explores her journey of self-discovery, love, and power as she interacts with famous mythological figures such as Odysseus, Athena, and the Minotaur.",
     price: 16.99,
@@ -123,7 +123,7 @@ const products = [
     name: "Where the Crawdads Sing",
     author: "Delia Owens",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg",
     description:
       "Where the Crawdads Sing is a mesmerizing mystery novel set in the marshes of North Carolina. It follows the story of Kya Clark, known as the 'Marsh Girl,' as she navigates loneliness, love, and a haunting murder investigation.",
     price: 11.99,
@@ -140,7 +140,7 @@ const products = [
     name: "Unbroken",
     author: "Laura Hillenbrand",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327861115i/8664353.jpg",
     description:
       "Unbroken is a gripping biography of Louis Zamperini, an Olympic athlete and World War II prisoner of war. The book details his resilience, survival, and triumph over unimaginable adversity.",
     price: 12.49,
@@ -157,7 +157,7 @@ const products = [
     name: "The Underground Railroad",
     author: "Colson Whitehead",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493178362i/30555488.jpg",
     description:
       "The Underground Railroad is a powerful historical fiction novel that reimagines the Underground Railroad as a literal network of underground tracks. It follows the journey of Cora, a slave escaping from a Georgia plantation, as she seeks freedom and encounters various challenges along the way.",
     price: 10.99,
@@ -174,7 +174,7 @@ const products = [
     name: "The Alchemist",
     author: "Paulo Coelho",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
     description:
       "The Alchemist is a timeless philosophical novel that follows the journey of Santiago, an Andalusian shepherd boy, as he searches for a hidden treasure. Along the way, he encounters life-changing lessons and learns about the true meaning of life and destiny.",
     price: 9.29,
@@ -191,7 +191,7 @@ const products = [
     name: "A Thousand Splendid Suns",
     author: "Khaled Hosseini",
     coverImage:
-      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1655336738i/128029.jpg",
     description:
       "A Thousand Splendid Suns is a heart-wrenching and powerful novel set in Afghanistan. It tells the intertwined stories of two women, Mariam and Laila, as they endure hardships and find strength in their friendship during the tumultuous years of war and oppression.",
     price: 13.49,
