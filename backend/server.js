@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const db = require("./config/db");
 
 const productRouter = require("./routes/productRoutes");
+const userRouter = require("./routes/userRoutes");
 
 //creating a server
 const app = express();
@@ -17,6 +18,8 @@ app.get("/", (req, res) => {
 
 //route for "/api/products"
 app.use("/api/products", productRouter);
+//route for "/api/auth"
+app.use("/api/auth", userRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
