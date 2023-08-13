@@ -1,12 +1,13 @@
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 const createUser = async (req, res) => {
   try {
-    const newUser = req.body;
+    const { name, email, number, password } = req.body;
 
-    const existingUserWithEmail = await User.findOne({ email: newUser.email });
+    const existingUserWithEmail = await User.findOne({ email });
     const existingUserWithNumber = await User.findOne({
-      number: newUser.number,
+      number,
     });
 
     if (existingUserWithEmail) {
@@ -20,7 +21,13 @@ const createUser = async (req, res) => {
         .json({ error: "User with this number already exists." });
     }
 
-    const createdUser = await User.create(newUser);
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const createdUser = await User.create({
+      name,
+      email,
+      number,
+      password: hashedPassword,
+    });
     res.status(201).json(createdUser);
   } catch (err) {
     console.error(err);
