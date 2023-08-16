@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const db = require("./config/db");
+const cookieParser = require("cookie-parser");
 
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -9,6 +10,7 @@ const userRouter = require("./routes/userRoutes");
 //creating a server
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 db();
 
 //route for "/"
