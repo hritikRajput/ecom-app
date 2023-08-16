@@ -23,4 +23,41 @@ const createProducts = async (req, res) => {
   }
 };
 
-module.exports = { getAllProducts, createProducts };
+const deleteProduct = async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const removedProduct = await Product.findByIdAndDelete(productId);
+    if (!removedProduct) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    res.status(200).json({ message: "success" });
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occurred while deleting products", err });
+  }
+};
+
+const getProductById = async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    res.status(200).json({ message: "success" });
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "An error occurred while getting product", err });
+  }
+};
+
+module.exports = {
+  getAllProducts,
+  createProducts,
+  deleteProduct,
+  getProductById,
+};
