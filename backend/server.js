@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
+const wishListRouter = require("./routes/wishListRoutes");
 
 //creating a server
 const app = express();
@@ -22,6 +23,8 @@ app.get("/", (req, res) => {
 app.use("/api/products", productRouter);
 //route for "/api/auth"
 app.use("/api/auth", userRouter);
+//route for "/api/wishlist"
+app.use("/api/wishlist", wishListRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
