@@ -9,6 +9,7 @@ const productSchema = new Schema(
     description: String,
     price: Number,
     discount: Number,
+    discountedPrice: Number,
     format: String,
     genre: Array,
     pages: Number,
