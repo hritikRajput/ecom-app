@@ -1,7 +1,7 @@
-import './App.css'
-
-function App() {
-
+const App = () => {
+    return <>I am App</>
 }
 
-export default App
+export default App;
+
+
