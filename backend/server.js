@@ -3,6 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const db = require("./config/db");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -10,6 +11,7 @@ const wishListRouter = require("./routes/wishListRoutes");
 
 //creating a server
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 db();
