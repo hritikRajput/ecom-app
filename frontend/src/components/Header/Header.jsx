@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header className="px-16 py-8 flex justify-between items-center border-[#e1e1e3] border-solid border-2 ">
             <div className="text-4xl text-secondary px-4 py-2">
-                Booknest
+                <a href="/">Booknest</a>
             </div>
 
             <div className="flex items-center relative bg-white rounded">
