@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 
+img{
+  @apply cursor-pointer
+}
+
+
   @layer utilities {
     .booklist-book:hover .product-image {
         @apply shadow-md transform scale-105;

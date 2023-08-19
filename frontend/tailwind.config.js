@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        secondary: "#573ba3",
+        "seconday-dark": "#2b0f42",
+        "--color-b-input": "#dcd6cc",
+        "--color-title-header": "#dc3545",
+      },
       fontFamily: {
         baskerville: ["Libre Baskerville", "serif"],
       },
