@@ -15,7 +15,7 @@ const ProductCard = (props) => {
                         />
                     </div>
                 </a>
-                <div className="absolute top-2 right-2 cursor-pointer transition ease-in delay-200 hover:transform hover:scale-110"><img src={heart} alt="" className="w-5 h-5" /></div>
+                <div className="absolute top-2 right-2 cursor-pointer transition ease-in duration-200 hover:transform hover:scale-110"><img src={heart} alt="" className="w-5 h-5" /></div>
             </div>
             <div className="mt-2">
                 <div className="pt-2 leading-5 font-bold ellipsis line-clamp-2"><a href="">{title}</a></div>
