@@ -7,7 +7,7 @@ const ProductCard = (props) => {
         <div className="bg-white grid grid-cols-1 grid-rows-layout-5 booklist-book" >
             <div className="row-span-1 relative w-full pb-[145%] rounded self-stretch bg-slate-50">
                 <a href="#" className="p-2 absolute top-0 left-0 right-0 bottom-0 flex">
-                    <div className="rounded relative shadow-product-image transition ease-in delay-200 flex flex-1 product-image">
+                    <div className="rounded relative shadow-product-image transition ease-in duration-200 flex flex-1 product-image">
                         <img
                             src={coverImage}
                             alt=""
