@@ -6,8 +6,7 @@ export default {
       colors: {
         secondary: "#573ba3",
         "seconday-dark": "#2b0f42",
-        "--color-b-input": "#dcd6cc",
-        "--color-title-header": "#dc3545",
+        "gray-lighter": "#cecdd1",
       },
       fontFamily: {
         baskerville: ["Libre Baskerville", "serif"],
