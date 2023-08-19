@@ -12,11 +12,11 @@ const Products = () => {
         })()
     }, [])
 
-    // Render Card
     return (
-        <div>
-            <h1>I am product</h1>
-            {products.map((product, index) => < ProductCard />)}
+        <div className="px-32 py-8">
+            <div className="grid grid-cols-5 gap-x-6 gap-y-8 max-w-[1024px] mx-auto">
+                {products.map((product) => < ProductCard key={product.id} coverImage={product.coverImage} title={product.title} author={product.author} price={product.price} discountedPrice={product.discountedPrice} />)}
+            </div>
         </div>
 
     )
