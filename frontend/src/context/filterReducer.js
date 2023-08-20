@@ -4,6 +4,8 @@ const filterReducer = (state, action) => {
       return { ...state, category: action.payload };
     case "SET_PRICE_RANGE":
       return { ...state, price: action.payload };
+    case "SET_RATING":
+      return { ...state, rating: action.payload };
     default:
       return state;
   }
