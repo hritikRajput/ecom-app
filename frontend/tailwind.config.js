@@ -18,6 +18,11 @@ export default {
         "product-image": "0px 6px 12px rgba(0, 0, 0, 0.3)",
       },
     },
+    screens: {
+      tablet: "640px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
     plugins: [],
   },
 };
