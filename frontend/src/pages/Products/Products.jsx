@@ -34,9 +34,14 @@ const Products = () => {
         return (selectedRating ? products.filter(product => (product.rating >= selectedRating - 1)) : products)
     }
 
+    const filterProductBySearch = (products, search) => {
+        return (search && search.length) ? products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())) : products
+    }
+
     const filteredByCategory = filterProductByCategory(products, state.category);
     const filteredByPrice = filterProductByPrice(filteredByCategory, state.price.min, state.price.max);
     const filteredByRating = filterProductByRating(filteredByPrice, state.rating);
+    const filteredBySearch = filterProductBySearch(filteredByRating, state.search);
 
     return (
         <>
@@ -51,7 +56,7 @@ const Products = () => {
                 <div className="px-32 py-8 col-span-5">
                     <h1 className="text-4xl text-center mb-4 text-seconday-dark">Products Page</h1>
                     <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-5 gap-x-6 gap-y-8 max-w-[1024px] mx-auto">
-                        {filteredByRating.map((product) => < ProductCard key={product.id} coverImage={product.coverImage} title={product.title} author={product.author} price={product.price} discountedPrice={product.discountedPrice} />)}
+                        {filteredBySearch.map((product) => < ProductCard key={product.id} product={product} />)}
                     </div>
                 </div>
             </div>

@@ -6,6 +6,8 @@ const filterReducer = (state, action) => {
       return { ...state, price: action.payload };
     case "SET_RATING":
       return { ...state, rating: action.payload };
+    case "SEARCH":
+      return { ...state, search: action.payload };
     default:
       return state;
   }

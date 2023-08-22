@@ -1,6 +1,17 @@
 import heart from "../../assets/heart.png"
+import useWishList from "../../context/useWishList";
 const ProductCard = (props) => {
-    const { coverImage, title, author, price, discountedPrice } = props;
+    const product = { props }
+    const { coverImage, title, author, price, discountedPrice } = product;
+    const { dispatch } = useWishList();
+
+    const handleWishListClick = () => {
+        dispatch({
+            type: "ADD_TO_WISHLIST",
+            payload: product,
+        }
+        )
+    }
 
 
     return (
@@ -15,7 +26,7 @@ const ProductCard = (props) => {
                         />
                     </div>
                 </a>
-                <div className="absolute w-8 h-8 flex justify-center items-center rounded-[50%] bg-slate-200 top-1 right-1 cursor-pointer transition ease-in duration-200 hover:transform hover:scale-110"><img src={heart} alt="" className="w-5 h-5" /></div>
+                <div onClick={handleWishListClick} className="absolute w-8 h-8 flex justify-center items-center rounded-[50%] bg-slate-200 top-1 right-1 cursor-pointer transition ease-in duration-200 hover:transform hover:scale-110"><img src={heart} alt="" className="w-5 h-5" /></div>
             </div>
             <div className="mt-2">
                 <div className="pt-2 leading-5 font-bold ellipsis line-clamp-2"><a href="">{title}</a></div>
