@@ -1,18 +1,31 @@
 import heart from "../../assets/heart.png"
+import heartFill from "../../assets/heart-fill.png";
 import useWishList from "../../context/useWishList";
-const ProductCard = (props) => {
-    const product = { props }
-    const { coverImage, title, author, price, discountedPrice } = product;
-    const { dispatch } = useWishList();
+const ProductCard = ({ product }) => {
+    const { _id, coverImage, title, author, price, discountedPrice } = product;
+    const { state, dispatch } = useWishList();
+
+    const checkProductInWishList = (wishlist, product) => {
+        return wishlist.length ? wishlist.some(wishListItem => wishListItem._id === product._id) : false;
+    }
+    const isWishListed = checkProductInWishList(state.wishlist, product)
 
     const handleWishListClick = () => {
-        dispatch({
-            type: "ADD_TO_WISHLIST",
-            payload: product,
+        if (!isWishListed) {
+            dispatch({
+                type: "ADD_TO_WISHLIST",
+                payload: product,
+            }
+            )
         }
-        )
+        else {
+            dispatch({
+                type: "REMOVE_FROM_WISHLIST",
+                payload: product,
+            }
+            )
+        }
     }
-
 
     return (
         <div className="bg-white grid grid-cols-1 grid-rows-layout-5 booklist-book" >
@@ -26,7 +39,7 @@ const ProductCard = (props) => {
                         />
                     </div>
                 </a>
-                <div onClick={handleWishListClick} className="absolute w-8 h-8 flex justify-center items-center rounded-[50%] bg-slate-200 top-1 right-1 cursor-pointer transition ease-in duration-200 hover:transform hover:scale-110"><img src={heart} alt="" className="w-5 h-5" /></div>
+                <div onClick={handleWishListClick} className="absolute w-8 h-8 flex justify-center items-center rounded-[50%] bg-slate-200 top-1 right-1 cursor-pointer transition ease-in duration-200 hover:transform hover:scale-110"><img src={isWishListed ? heartFill : heart} alt="" className="w-5 h-5" /></div>
             </div>
             <div className="mt-2">
                 <div className="pt-2 leading-5 font-bold ellipsis line-clamp-2"><a href="">{title}</a></div>

@@ -4,11 +4,14 @@ import Header from "../../components/Header/Header"
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { CategoryFilter, PriceFilter, RatingFilter } from "../../components/Filters"
 import useFilter from "../../context/useFilter";
+import useWishList from "../../context/useWishList";
 
 
 const Products = () => {
     const [products, setProducts] = useState([])
     const { state } = useFilter();
+    const { state: { wishlist } } = useWishList();
+    console.log(wishlist)
     useEffect(() => {
         (async () => {
             const data = await getAllProducts();
