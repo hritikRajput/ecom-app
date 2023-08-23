@@ -1,5 +1,10 @@
 const wishListReducer = (state, action) => {
   switch (action.type) {
+    case "FETCH_WISHLIST_SUCCESS":
+      return {
+        ...state,
+        wishlist: action.payload,
+      };
     case "ADD_TO_WISHLIST":
       return {
         ...state,
