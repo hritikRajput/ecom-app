@@ -1,4 +1,5 @@
 import CartCard from "../../components/CartCard/CartCard";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header"
 import useCart from "../../context/CartContext/useCart";
 
@@ -29,6 +30,7 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
 
     )

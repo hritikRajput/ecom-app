@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import useAuth from "../../context/AuthContext/useAuth";
 import { signUp } from "../../services/authService"
@@ -55,6 +56,7 @@ const Signup = () => {
                     </div >
                 </div >
             </main>
+            <Footer />
         </div>
     )
 }

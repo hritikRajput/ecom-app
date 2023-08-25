@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
 import useWishList from "../../context/useWishList"
 
@@ -8,6 +9,7 @@ const Home = () => {
     return (
         <>
             <Header />
+            <Footer />
         </>
 
     )

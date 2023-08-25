@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import { CategoryFilter, PriceFilter, RatingFilter } from "../../components/Filters"
 import useFilter from "../../context/useFilter";
 import useWishList from "../../context/useWishList";
+import Footer from "../../components/Footer/Footer";
 
 
 const Products = () => {
@@ -63,6 +64,7 @@ const Products = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
 
     )

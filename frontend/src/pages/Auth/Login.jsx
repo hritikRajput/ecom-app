@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import useAuth from "../../context/AuthContext/useAuth";
 import { logIn } from "../../services/authService";
@@ -44,6 +45,7 @@ const Login = () => {
                     </div >
                 </div >
             </main>
+            <Footer />
         </div>
     )
 }

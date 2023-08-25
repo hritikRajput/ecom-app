@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header"
 import WishListCard from "../../components/WishListCard/WishListCard";
 import useWishList from "../../context/useWishList";
@@ -14,6 +15,7 @@ const WishList = () => {
                     {wishlist.map((product) => < WishListCard key={product.id} product={product} />)}
                 </div>
             </div>
+            <Footer />
         </>
 
     )
