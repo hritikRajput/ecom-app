@@ -24,6 +24,9 @@ export default {
       boxShadow: {
         "product-image": "0px 6px 12px rgba(0, 0, 0, 0.3)",
       },
+      backgroundImage: {
+        "hero-books": "url('/src/assets/bookstack1.jpg')",
+      },
     },
     screens: {
       tablet: "640px",
