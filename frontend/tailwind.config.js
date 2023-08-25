@@ -4,9 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        "color-primary": "#de2454",
         secondary: "#573ba3",
         "seconday-dark": "#2b0f42",
         "gray-lighter": "#cecdd1",
+        "color-callout": "#f6f5f7",
+        "color-border": "#e1e1e3",
+        "color-dark-text": "#2c293b",
       },
       fontFamily: {
         baskerville: ["Libre Baskerville", "serif"],
