@@ -3,7 +3,7 @@ import useWishList from "../../context/useWishList";
 
 const WishListCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
-    const { state, dispatch } = useWishList();
+    const { dispatch } = useWishList();
 
     const handleWishListClick = () => {
         dispatch({
