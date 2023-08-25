@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import WishList from "./pages/Wishlist/WishList";
 import Signup from "./pages/Auth/Signup";
 import Login from "./pages/Auth/Login";
+import Cart from "./pages/Cart/Cart";
 const App = () => {
     return (
         <div className="font-baskerville">
@@ -11,6 +12,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/wishlist" element={<WishList />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
             </Routes>

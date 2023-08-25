@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         baskerville: ["Libre Baskerville", "serif"],
       },
+      gridTemplateColumns: {
+        "layout-cart": "2fr 8fr 2fr 2fr 1fr",
+      },
       gridTemplateRows: {
         "layout-5": "auto auto auto 1fr auto",
       },
