@@ -25,3 +25,15 @@ img{
     cursor: pointer;
   }
 
+  *, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+  }
+
