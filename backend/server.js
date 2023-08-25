@@ -8,6 +8,7 @@ const cors = require("cors");
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const wishListRouter = require("./routes/wishListRoutes");
+const cartRouter = require("./routes/cartRoutes");
 
 //creating a server
 const app = express();
@@ -27,6 +28,8 @@ app.use("/api/products", productRouter);
 app.use("/api/auth", userRouter);
 //route for "/api/wishlist"
 app.use("/api/wishlist", wishListRouter);
+//route for "/api/cart"
+app.use("/api/cart", cartRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
