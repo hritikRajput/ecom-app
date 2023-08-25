@@ -5,13 +5,16 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { FilterProvider } from "./context/FilterContext"
 import { WishListProvider } from './context/WishListContext'
+import { AuthProvider } from "./context/AuthContext/AuthContext"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <FilterProvider>
         <WishListProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </WishListProvider>
       </FilterProvider>
 
