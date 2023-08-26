@@ -4,6 +4,7 @@ import shoppingCart from "../../assets/shopping-cart.png";
 import heartFill from "../../assets/heart-fill.png";
 import useFilter from "../../context/useFilter"
 import { debounce } from "lodash"
+import { Link } from "react-router-dom"
 
 const Header = () => {
 
@@ -18,8 +19,12 @@ const Header = () => {
 
     return (
         <header className="px-16 py-8 flex justify-between items-center border-[#e1e1e3] border-solid border-2 ">
-            <div className="text-4xl text-secondary px-4 py-2">
-                <a href="/">Booknest</a>
+            <div className=" flex text-secondary px-4 py-2">
+                <Link to="/"><p className="text-4xl mr-8">Booknest</p></Link>
+                <div className="text-2xl flex items-end gap-4">
+                    <Link to="/">Home</Link>
+                    <Link to="/products">Shop</Link>
+                </div>
             </div>
 
             <div className="flex items-center relative bg-white rounded">
@@ -31,16 +36,16 @@ const Header = () => {
 
             <div className="flex px-4 py-2">
                 <div className="px-4">
-                    <img src={heartFill} alt="wishlist icon image" className="h-6 w-6" />
+                    <Link to="/wishlist"><img src={heartFill} alt="wishlist icon image" className="h-6 w-6" /></Link>
                 </div>
                 <div className="px-2">
-                    <img src={shoppingCart} alt="cart icon image" className="h-6 w-6" />
+                    <Link to="/cart"><img src={shoppingCart} alt="cart icon image" className="h-6 w-6" /></Link>
                 </div>
                 <div className="px-4">
                     <img src={user} alt="account icon image" className="h-6 w-6" />
                 </div>
             </div>
-        </header>
+        </header >
     )
 }
 export default Header
