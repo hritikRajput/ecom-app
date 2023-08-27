@@ -9,6 +9,7 @@ const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const wishListRouter = require("./routes/wishListRoutes");
 const cartRouter = require("./routes/cartRoutes");
+const checkoutRouter = require("./routes/checkoutRoutes");
 
 //creating a server
 const app = express();
@@ -30,6 +31,8 @@ app.use("/api/auth", userRouter);
 app.use("/api/wishlist", wishListRouter);
 //route for "/api/cart"
 app.use("/api/cart", cartRouter);
+//route for "/api/checkout"
+app.use("/api/checkout", checkoutRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
