@@ -28,4 +28,4 @@ const createOrder = async (req, res) => {
   }
 };
 
-exports.module = createOrder;
+exports.module = { createOrder };
