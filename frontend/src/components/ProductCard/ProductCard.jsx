@@ -1,6 +1,7 @@
 import heart from "../../assets/heart.png"
 import heartFill from "../../assets/heart-fill.png";
 import useWishList from "../../context/useWishList";
+import { addWishListItem, removeWishListItem } from "../../services/wishListService";
 const ProductCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { state, dispatch } = useWishList();
@@ -12,6 +13,7 @@ const ProductCard = ({ product }) => {
 
     const handleWishListClick = () => {
         if (!isWishListed) {
+            addWishListItem(product)
             dispatch({
                 type: "ADD_TO_WISHLIST",
                 payload: product,
@@ -19,6 +21,7 @@ const ProductCard = ({ product }) => {
             )
         }
         else {
+            removeWishListItem(_id)
             dispatch({
                 type: "REMOVE_FROM_WISHLIST",
                 payload: product,

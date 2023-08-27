@@ -1,11 +1,13 @@
 import crossCircle from "../../assets/cross-circle.png"
 import useWishList from "../../context/useWishList";
+import { removeWishListItem } from "../../services/wishListService";
 
 const WishListCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { dispatch } = useWishList();
 
     const handleWishListClick = () => {
+        removeWishListItem(_id)
         dispatch({
             type: "REMOVE_FROM_WISHLIST",
             payload: product,

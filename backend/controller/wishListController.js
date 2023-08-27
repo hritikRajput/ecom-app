@@ -35,9 +35,9 @@ const removeWishListItem = async (req, res) => {
 const getWishListItems = async (req, res) => {
   try {
     const wishListItems = await WishList.find({});
-    wishListItems
+    wishListItems.length
       ? res.status(200).json(wishListItems)
-      : "No items in wishList";
+      : res.status(200).json([]);
   } catch (err) {
     console.error(err);
     res

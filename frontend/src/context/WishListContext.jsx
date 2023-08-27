@@ -1,7 +1,7 @@
 import { createContext, useReducer, useEffect } from "react";
 import wishListReducer from "./wishListReducer";
 import PropTypes from "prop-types";
-import getWishListItems from "../services/wishListService";
+import { getWishListItems } from "../services/wishListService";
 
 const WishListContext = createContext();
 const WishListProvider = ({ children }) => {
