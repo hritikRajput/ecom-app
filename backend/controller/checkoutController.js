@@ -22,9 +22,9 @@ const createOrder = async (req, res) => {
 
     const order = await instance.orders.create(options);
     res.json({ order_id: order.id, amount, currency, notes: options.notes });
-  } catch (error) {
-    console.error("Error creating Razorpay order:", error);
-    res.status(500).json({ error: "Error creating Razorpay order" });
+  } catch (err) {
+    console.error("Error creating Razorpay order:", err);
+    res.status(500).json({ error: "Error creating Razorpay order", err });
   }
 };
 
