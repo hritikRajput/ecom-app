@@ -6,7 +6,6 @@ const instance = new razorpay({
 
 const createOrder = async (req, res) => {
   try {
-    const { user } = req;
     const amount = 10000;
     const currency = "INR";
 
@@ -14,14 +13,10 @@ const createOrder = async (req, res) => {
       amount,
       currency,
       receipt: `order_${Date.now()}`,
-      notes: {
-        user_id: user._id,
-        username: user.name,
-      },
     };
 
     const order = await instance.orders.create(options);
-    res.json({ order_id: order.id, amount, currency, notes: options.notes });
+    res.json({ order_id: order.id, amount, currency });
   } catch (err) {
     console.error("Error creating Razorpay order:", err);
     res.status(500).json({ error: "Error creating Razorpay order", err });
