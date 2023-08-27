@@ -12,6 +12,7 @@ const cartRouter = require("./routes/cartRoutes");
 const checkoutRouter = require("./routes/checkoutRoutes");
 
 //creating a server
+const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -36,7 +37,7 @@ app.use("/api/checkout", checkoutRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
-  app.listen(3000, () => {
-    console.log(`Server is running on port 3000`);
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
   });
 });
