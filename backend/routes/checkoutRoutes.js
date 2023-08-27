@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { createOrder } = require("../controller/checkoutController");
 
-router.route("/api/checkout").post(createOrder);
+router.route("/").post(createOrder);
 
 module.exports = router;
