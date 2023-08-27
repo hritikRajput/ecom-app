@@ -2,11 +2,19 @@ import crossCircle from "../../assets/cross-circle.png"
 import useWishList from "../../context/useWishList";
 import useCart from "../../context/CartContext/useCart";
 import { removeWishListItem } from "../../services/wishListService";
+import { addCartItem } from "../../services/cartService";
+import { useNavigate } from "react-router-dom";
 
 const WishListCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { dispatch: wishListDispatch } = useWishList();
-    const { dispatch: cartDispatch } = useCart();
+    const { state: cartState, dispatch: cartDispatch } = useCart();
+    const navigate = useNavigate();
+
+    const checkInCart = (cart, product) => {
+        return cart.length ? cart.some(cartItem => cartItem._id === product._id) : false;
+    }
+    const isInCart = checkInCart(cartState.cart, product)
 
     const handleWishListClick = () => {
         removeWishListItem(_id)
@@ -16,19 +24,18 @@ const WishListCard = ({ product }) => {
         }
         )
     }
-    const handleAddToCartClick = () => {
-        removeWishListItem(_id)
-        wishListDispatch({
-            type: "REMOVE_FROM_WISHLIST",
-            payload: product,
+    const handleAddToCart = () => {
+        if (!isInCart) {
+            addCartItem(product)
+            cartDispatch({
+                type: "ADD_TO_CART",
+                payload: product,
+            }
+            )
         }
-        )
-        addCartItem(product);
-        cartDispatch({
-            type: "ADD_TO_CART",
-            payload: product,
+        else {
+            navigate("/cart")
         }
-        )
     }
 
     return (
@@ -53,8 +60,8 @@ const WishListCard = ({ product }) => {
                 <span className="font-bold">&#8377;{discountedPrice}</span>
             </div>
 
-            <div className="px-2" onClick={handleAddToCartClick}>
-                <button className="uppercase rounded bg-secondary text-opacity-1 text-white font-bold px-6 py-2 hover:scale-105 transition ease-in duration-200 w-full">Add to Cart</button>
+            <div className="px-2" onClick={handleAddToCart}>
+                <button className="uppercase rounded bg-secondary text-opacity-1 text-white font-bold px-6 py-2 hover:scale-105 transition ease-in duration-200 w-full">{isInCart ? "In Cart" : "Add to Cart"}</button>
             </div>
         </div >
     )

@@ -1,7 +1,7 @@
 import { createContext, useReducer, useEffect } from "react";
 import cartReducer from "./cartReducer";
 import PropTypes from "prop-types";
-import getCartItems from "../../services/cartService"
+import { getCartItems } from "../../services/cartService"
 
 const CartContext = createContext();
 const CartProvider = ({ children }) => {
