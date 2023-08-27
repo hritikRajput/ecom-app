@@ -21,7 +21,7 @@ const Header = () => {
         <header className="px-16 py-8 flex justify-between items-center border-[#e1e1e3] border-solid border-2 ">
             <div className=" flex text-secondary px-4 py-2">
                 <Link to="/"><p className="text-4xl mr-8">Booknest</p></Link>
-                <div className="text-2xl flex items-end gap-4">
+                <div className="text-2xl flex items-end gap-4 text-color-dark-text">
                     <Link to="/">Home</Link>
                     <Link to="/products">Shop</Link>
                 </div>

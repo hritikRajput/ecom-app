@@ -7,7 +7,7 @@ import Login from "./pages/Auth/Login";
 import Cart from "./pages/Cart/Cart";
 const App = () => {
     return (
-        <div className="font-baskerville">
+        <div className="font-baskerville min-h-[100vh]">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
