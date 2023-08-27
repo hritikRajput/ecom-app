@@ -4,6 +4,7 @@ const CategoryFilter = () => {
     const handleClick = (category) => {
         dispatch({ type: 'SET_CATEGORY', payload: category });
     }
+
     return (
         <div className="mb-2">
             <div className="bg-gray-lighter px-4 py-4 mb-1">CATEGORY</div>

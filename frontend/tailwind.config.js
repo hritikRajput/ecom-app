@@ -20,6 +20,7 @@ export default {
       },
       gridTemplateRows: {
         "layout-5": "auto auto auto 1fr auto",
+        "layout-6": "auto auto auto 1fr auto auto",
       },
       boxShadow: {
         "product-image": "0px 6px 12px rgba(0, 0, 0, 0.3)",
