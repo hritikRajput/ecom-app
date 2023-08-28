@@ -44,8 +44,8 @@ const Cart = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <div className="px-40 py-8">
-                <div className="max-w-[1024px] mx-auto flex-grow">
+            <div className="px-40 py-8 flex-grow">
+                <div className="max-w-[1024px] mx-auto">
                     <h1 className="text-4xl text-center mb-4 text-seconday-dark">Cart</h1>
                     <div className="text-right"> <button className="uppercase rounded bg-color-primary border-2 border-solid border-color-primary text-opacity-1 text-white font-bold px-6 py-2" onClick={() => displayRazorpay(navigate)}>Checkout (Total: &#8377;{totalPrice().toFixed(2)})</button></div>
                     <div className="grid grid-cols-layout-cart grid-rows-1 font-bold gap-x-4 ">
