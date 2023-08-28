@@ -52,10 +52,11 @@ const loginUser = async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(401).json({ error: "Invalid credentials." });
     }
+
+    //create a token
     let token = jwt.sign({ name: user.name }, secretKey, { expiresIn: "8h" });
     user.token = token;
     user.password = undefined;
-
     const options = {
       expires: new Date(Date.now() + 8 * 60 * 60 * 1000),
       httpOnly: true,
