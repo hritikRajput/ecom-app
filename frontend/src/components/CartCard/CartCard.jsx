@@ -1,6 +1,18 @@
 import trash from "../../assets/trash.png"
+import useCart from "../../context/CartContext/useCart";
+import { removeCartItem } from "../../services/cartService";
 const CartCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
+    const { dispatch } = useCart();
+
+    const handleTrashClick = () => {
+        removeCartItem(_id);
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: product
+        })
+    }
+
     return (
         <div className="grid grid-cols-layout-cart grid-rows-1 gap-x-4 p-4 border-t-2 border-solid border-color-border">
             <div className="col-span-1 ">
@@ -27,7 +39,7 @@ const CartCard = ({ product }) => {
                 <span className="line-through mr-2 text-color-primary font-bold">&#8377;{price}</span>
                 <span className="font-bold">&#8377;{discountedPrice}</span>
             </div>
-            <div className="text-sm text-right">
+            <div className="text-sm text-right" onClick={handleTrashClick}>
                 <img
                     src={trash}
                     alt=""

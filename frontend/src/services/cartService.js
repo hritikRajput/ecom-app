@@ -10,7 +10,6 @@ const getCartItems = async () => {
 };
 
 const addCartItem = async (product) => {
-  console.log(product);
   try {
     const { data } = await axios.post(`${BASE_URL}api/cart`, product);
     return data;
@@ -18,5 +17,13 @@ const addCartItem = async (product) => {
     console.error("Error in adding product to cart", err);
   }
 };
+const removeCartItem = async (_id) => {
+  try {
+    const { data } = await axios.delete(`${BASE_URL}api/cart/${_id}`);
+    return data;
+  } catch (err) {
+    console.error("Error in removing product from cart", err);
+  }
+};
 
-export { getCartItems, addCartItem };
+export { getCartItems, addCartItem, removeCartItem };
