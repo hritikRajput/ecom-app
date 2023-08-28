@@ -1,12 +1,18 @@
 const authReducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_FIELD":
-      console.log({ ...state });
-      console.log(action.payload);
       return {
         ...state,
         ...action.payload,
       };
+    case "LOGOUT":
+      return {
+        name: "",
+        email: "",
+        number: "",
+        password: "",
+      };
+
     default:
       return state;
   }
