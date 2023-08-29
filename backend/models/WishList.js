@@ -24,7 +24,7 @@ const wishListSchema = new Schema(
     userId: {
       type: String,
       required: true,
-      ref: User,
+      ref: "User",
     },
   },
 
