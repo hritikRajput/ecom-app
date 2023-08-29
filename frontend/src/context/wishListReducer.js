@@ -17,6 +17,10 @@ const wishListReducer = (state, action) => {
           (item) => item._id !== action.payload._id
         ),
       };
+    case "SET_WISHLIST":
+      return {
+        wishlist: action.payload,
+      };
     default:
       return state;
   }

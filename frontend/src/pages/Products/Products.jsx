@@ -60,7 +60,7 @@ const Products = () => {
                 <div className="px-32 py-8 col-span-5">
                     <h1 className="text-4xl text-center mb-4 text-seconday-dark">Products Page</h1>
                     <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-5 gap-x-6 gap-y-8 max-w-[1024px] mx-auto">
-                        {filteredBySearch.map((product) => < ProductCard key={product.id} product={product} />)}
+                        {filteredBySearch.map((product) => < ProductCard key={product._id} product={product} />)}
                     </div>
                 </div>
             </div>

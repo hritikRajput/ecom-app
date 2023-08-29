@@ -5,14 +5,16 @@ import useFilter from "../../context/useFilter"
 import { debounce } from "lodash"
 import { Link, useNavigate } from "react-router-dom"
 import useAuth from "../../context/AuthContext/useAuth";
+import useWishList from "../../context/useWishList";
 
 const Header = () => {
     const navigate = useNavigate();
-    const { dispatch } = useFilter()
-    const { state } = useAuth()
+    const { dispatch: filterDispatch } = useFilter();
+    const { state: authState } = useAuth();
+    const { dispatch: wishListDispatch } = useWishList();
 
     const handleSearch = debounce((e) => {
-        dispatch({
+        filterDispatch({
             type: "SEARCH",
             payload: e.target.value,
         })
@@ -20,7 +22,8 @@ const Header = () => {
 
     const handleClick = () => {
         localStorage.removeItem('user')
-        dispatch({ type: 'LOGOUT' })
+        filterDispatch({ type: 'LOGOUT' })
+        wishListDispatch({ type: "SET_WISHLIST", payload: [] })
         navigate("/")
     }
 
@@ -48,9 +51,9 @@ const Header = () => {
                 <div className="px-2">
                     <Link to="/cart"><img src={shoppingCart} alt="cart icon image" className="h-6 w-6" /></Link>
                 </div>
-                {state.email
+                {authState.email
                     ? (<div className="px-4 flex gap-4">
-                        <span>{state.email}</span>
+                        <span>{authState.email}</span>
                         <span onClick={handleClick} className="cursor-pointer">Logout</span>
                     </div>)
                     :
