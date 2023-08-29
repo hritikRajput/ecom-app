@@ -2,6 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import cartReducer from "./cartReducer";
 import PropTypes from "prop-types";
 import { getCartItems } from "../../services/cartService"
+import useAuth from "../AuthContext/useAuth";
 
 const CartContext = createContext();
 const CartProvider = ({ children }) => {
@@ -9,15 +10,19 @@ const CartProvider = ({ children }) => {
         cart: [],
     };
     const [state, dispatch] = useReducer(cartReducer, initialState);
+    const { state: authState, dispatch: authDispatch } = useAuth();
+    const token = authState.token
 
     useEffect(() => {
-        (async () => {
-            const data = await getCartItems();
-            dispatch({
-                type: "FETCH_CART_SUCCESS",
-                payload: data,
-            });
-        })()
+        if (token) {
+            (async () => {
+                const data = await getCartItems(token);
+                dispatch({
+                    type: "FETCH_CART_SUCCESS",
+                    payload: data,
+                });
+            })()
+        }
     }, [])
 
     return (

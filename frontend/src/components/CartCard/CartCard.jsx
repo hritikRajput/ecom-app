@@ -1,12 +1,15 @@
 import trash from "../../assets/trash.png"
 import useCart from "../../context/CartContext/useCart";
+import useAuth from "../../context/AuthContext/useAuth";
 import { removeCartItem } from "../../services/cartService";
 const CartCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { dispatch } = useCart();
+    const { state: authState, dispatch: authDispatch } = useAuth();
+    const token = authState.token
 
     const handleTrashClick = () => {
-        removeCartItem(_id);
+        removeCartItem(_id, token);
         dispatch({
             type: "REMOVE_FROM_CART",
             payload: product
