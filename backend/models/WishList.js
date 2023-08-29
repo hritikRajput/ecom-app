@@ -20,6 +20,11 @@ const wishListSchema = new Schema(
     reviews: Array,
     dimensions: Object,
     isInStock: Boolean,
+    userId: {
+      type: String,
+      required: true,
+      ref: User,
+    },
   },
 
   {
