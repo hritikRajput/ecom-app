@@ -55,13 +55,14 @@ const loginUser = async (req, res) => {
 
     //create a token
     let token = jwt.sign({ name: user.name }, secretKey, { expiresIn: "8h" });
-    user.token = token;
-    user.password = undefined;
-    const options = {
-      expires: new Date(Date.now() + 8 * 60 * 60 * 1000),
-      httpOnly: true,
+    const userWithToken = {
+      _id: user._id,
+      name: user.name,
+      number: user.number,
+      email: user.email,
+      token: token,
     };
-    res.status(200).cookie("token", token, options).json({ user });
+    res.status(200).json({ user: userWithToken });
   } catch (err) {
     console.error(err);
     res.status(500).json({
