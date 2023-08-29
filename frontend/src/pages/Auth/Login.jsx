@@ -23,9 +23,8 @@ const Login = () => {
             email: state.email,
             password: state.password,
         });
-        console.log(data)
         // save the user to local storage
-        localStorage.setItem('user', JSON.stringify(data))
+        localStorage.setItem('user', JSON.stringify(data.user))
         // navigate("/")
     };
 

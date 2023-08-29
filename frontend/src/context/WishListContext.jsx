@@ -2,6 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import wishListReducer from "./wishListReducer";
 import PropTypes from "prop-types";
 import { getWishListItems } from "../services/wishListService";
+import useAuth from "./AuthContext/useAuth";
 
 const WishListContext = createContext();
 const WishListProvider = ({ children }) => {
@@ -9,16 +10,20 @@ const WishListProvider = ({ children }) => {
     wishlist: [],
   };
   const [state, dispatch] = useReducer(wishListReducer, initialState);
+  const { state: authState, dispatch: authDispatch } = useAuth();
+  const token = authState.token
 
   useEffect(() => {
-    (async () => {
-      const data = await getWishListItems();
-      dispatch({
-        type: "FETCH_WISHLIST_SUCCESS",
-        payload: data,
-      });
-    })()
-  }, [])
+    if (token) {
+      (async () => {
+        const data = await getWishListItems(token);
+        dispatch({
+          type: "FETCH_WISHLIST_SUCCESS",
+          payload: data,
+        });
+      })()
+    }
+  }, [token])
 
   return (
     <WishListContext.Provider value={{ state, dispatch }}>

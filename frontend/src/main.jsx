@@ -11,16 +11,15 @@ import { CartProvider } from './context/CartContext/CartContext.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <FilterProvider>
-        <WishListProvider>
-          <AuthProvider>
+      <AuthProvider>
+        <FilterProvider>
+          <WishListProvider>
             <CartProvider>
               <App />
             </CartProvider>
-          </AuthProvider>
-        </WishListProvider>
-      </FilterProvider>
-
+          </WishListProvider>
+        </FilterProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

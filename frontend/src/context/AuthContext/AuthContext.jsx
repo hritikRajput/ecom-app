@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
         number: "",
         email: "",
         password: "",
+        token: "",
     };
     const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -17,11 +18,10 @@ const AuthProvider = ({ children }) => {
         if (user) {
             dispatch({
                 type: "UPDATE_FIELD",
-                payload: user.user
+                payload: user
             })
         }
     }, [])
-    console.log("AuthContext: ", state)
 
     return (
         <AuthContext.Provider value={{ state, dispatch }}>

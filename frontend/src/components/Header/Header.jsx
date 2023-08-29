@@ -11,7 +11,6 @@ const Header = () => {
 
     const { dispatch } = useFilter()
     const { state } = useAuth()
-    console.log(state)
 
     const handleSearch = debounce((e) => {
         dispatch({

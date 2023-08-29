@@ -1,6 +1,7 @@
 import crossCircle from "../../assets/cross-circle.png"
 import useWishList from "../../context/useWishList";
 import useCart from "../../context/CartContext/useCart";
+import useAuth from "../../context/AuthContext/useAuth";
 import { removeWishListItem } from "../../services/wishListService";
 import { addCartItem } from "../../services/cartService";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,8 @@ const WishListCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { dispatch: wishListDispatch } = useWishList();
     const { state: cartState, dispatch: cartDispatch } = useCart();
+    const { state: authState, dispatch: authDispatch } = useAuth();
+    const token = authState.token
     const navigate = useNavigate();
 
     const checkInCart = (cart, product) => {
@@ -17,24 +20,28 @@ const WishListCard = ({ product }) => {
     const isInCart = checkInCart(cartState.cart, product)
 
     const handleWishListClick = () => {
-        removeWishListItem(_id)
-        wishListDispatch({
-            type: "REMOVE_FROM_WISHLIST",
-            payload: product,
-        }
-        )
-    }
-    const handleAddToCart = () => {
-        if (!isInCart) {
-            addCartItem(product)
-            cartDispatch({
-                type: "ADD_TO_CART",
+        if (token) {
+            removeWishListItem(_id, token)
+            wishListDispatch({
+                type: "REMOVE_FROM_WISHLIST",
                 payload: product,
             }
             )
         }
-        else {
-            navigate("/cart")
+    }
+    const handleAddToCart = () => {
+        if (token) {
+            if (!isInCart) {
+                addCartItem(product, token)
+                cartDispatch({
+                    type: "ADD_TO_CART",
+                    payload: product,
+                }
+                )
+            }
+            else {
+                navigate("/cart")
+            }
         }
     }
 
