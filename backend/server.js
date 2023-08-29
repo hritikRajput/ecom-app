@@ -10,6 +10,7 @@ const userRouter = require("./routes/userRoutes");
 const wishListRouter = require("./routes/wishListRoutes");
 const cartRouter = require("./routes/cartRoutes");
 const checkoutRouter = require("./routes/checkoutRoutes");
+const { requireAuth } = require("./middleware/requireAuth");
 
 //creating a server
 const PORT = process.env.PORT || 8000;
@@ -29,7 +30,7 @@ app.use("/api/products", productRouter);
 //route for "/api/auth"
 app.use("/api/auth", userRouter);
 //route for "/api/wishlist"
-app.use("/api/wishlist", wishListRouter);
+app.use("/api/wishlist", requireAuth, wishListRouter);
 //route for "/api/cart"
 app.use("/api/cart", cartRouter);
 //route for "/api/checkout"
