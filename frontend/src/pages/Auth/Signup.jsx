@@ -5,7 +5,6 @@ import { signUp } from "../../services/authService"
 
 const Signup = () => {
     const { state, dispatch } = useAuth();
-    console.log(state)
 
     const handleChange = (e) => {
         const { name, value } = e.target;

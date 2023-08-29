@@ -5,10 +5,13 @@ import heartFill from "../../assets/heart-fill.png";
 import useFilter from "../../context/useFilter"
 import { debounce } from "lodash"
 import { Link } from "react-router-dom"
+import useAuth from "../../context/AuthContext/useAuth";
 
 const Header = () => {
 
     const { dispatch } = useFilter()
+    const { state } = useAuth()
+    console.log(state)
 
     const handleSearch = debounce((e) => {
         dispatch({
@@ -41,9 +44,14 @@ const Header = () => {
                 <div className="px-2">
                     <Link to="/cart"><img src={shoppingCart} alt="cart icon image" className="h-6 w-6" /></Link>
                 </div>
-                <div className="px-4">
+                {state.email ? (<div className="px-4">
                     <img src={user} alt="account icon image" className="h-6 w-6" />
-                </div>
+                    <span>{state.email}</span>
+                </div>) :
+                    (<div className="px-4">
+                        <Link to="/login">Login</Link>
+                    </div>)
+                }
             </div>
         </header >
     )

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import useAuth from "../../context/AuthContext/useAuth";
@@ -5,6 +6,7 @@ import { logIn } from "../../services/authService";
 
 const Login = () => {
     const { state, dispatch } = useAuth();
+    const navigate = useNavigate()
     const handleChange = (e) => {
         const { name, value } = e.target;
         console.log("name:" + name, "value:" + value)
@@ -22,6 +24,9 @@ const Login = () => {
             password: state.password,
         });
         console.log(data)
+        // save the user to local storage
+        localStorage.setItem('user', JSON.stringify(data))
+        // navigate("/")
     };
 
     return (

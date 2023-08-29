@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import authReducer from "./authReducer";
 import PropTypes from "prop-types";
 
@@ -11,6 +11,17 @@ const AuthProvider = ({ children }) => {
         password: "",
     };
     const [state, dispatch] = useReducer(authReducer, initialState);
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"))
+        if (user) {
+            dispatch({
+                type: "UPDATE_FIELD",
+                payload: user.user
+            })
+        }
+    }, [])
+    console.log("AuthContext: ", state)
 
     return (
         <AuthContext.Provider value={{ state, dispatch }}>
