@@ -32,9 +32,9 @@ app.use("/api/auth", userRouter);
 //route for "/api/wishlist"
 app.use("/api/wishlist", requireAuth, wishListRouter);
 //route for "/api/cart"
-app.use("/api/cart", cartRouter);
+app.use("/api/cart", requireAuth, cartRouter);
 //route for "/api/checkout"
-app.use("/api/checkout", checkoutRouter);
+app.use("/api/checkout", requireAuth, checkoutRouter);
 
 mongoose.connection.once("open", () => {
   console.log("connected to db");
