@@ -22,9 +22,8 @@ const wishListSchema = new Schema(
     dimensions: Object,
     isInStock: Boolean,
     userId: {
-      type: String,
-      required: true,
-      ref: "User",
+      type: Schema.Types.ObjectId,
+      ref: User,
     },
   },
 
