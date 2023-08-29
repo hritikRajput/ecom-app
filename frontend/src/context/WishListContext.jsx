@@ -10,7 +10,7 @@ const WishListProvider = ({ children }) => {
     wishlist: [],
   };
   const [state, dispatch] = useReducer(wishListReducer, initialState);
-  const { state: authState, dispatch: authDispatch } = useAuth();
+  const { state: authState } = useAuth();
   const token = authState.token
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const WishListProvider = ({ children }) => {
         });
       })()
     }
-  }, [authDispatch, token])
+  }, [token])
 
   return (
     <WishListContext.Provider value={{ state, dispatch }}>

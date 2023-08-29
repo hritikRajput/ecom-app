@@ -3,10 +3,12 @@ const WishList = require("../models/WishList");
 const addWishListItems = async (req, res) => {
   try {
     const newItems = req.body;
+    console.log(newItems);
     const createdItems = await WishList.create({
-      newItems,
+      ...newItems,
       userId: req.user._id,
     });
+    console.log(createdItems);
     res.status(201).json(createdItems);
   } catch (err) {
     console.error(err);
