@@ -1,14 +1,13 @@
 import search from "../../assets/search.png";
-import user from "../../assets/user.png";
 import shoppingCart from "../../assets/shopping-cart.png";
 import heartFill from "../../assets/heart-fill.png";
 import useFilter from "../../context/useFilter"
 import { debounce } from "lodash"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import useAuth from "../../context/AuthContext/useAuth";
 
 const Header = () => {
-
+    const navigate = useNavigate();
     const { dispatch } = useFilter()
     const { state } = useAuth()
 
@@ -18,6 +17,12 @@ const Header = () => {
             payload: e.target.value,
         })
     }, 500)
+
+    const handleClick = () => {
+        localStorage.removeItem('user')
+        dispatch({ type: 'LOGOUT' })
+        navigate("/")
+    }
 
     return (
         <header className="px-16 py-8 flex justify-between items-center border-[#e1e1e3] border-solid border-2 ">
@@ -43,12 +48,15 @@ const Header = () => {
                 <div className="px-2">
                     <Link to="/cart"><img src={shoppingCart} alt="cart icon image" className="h-6 w-6" /></Link>
                 </div>
-                {state.email ? (<div className="px-4">
-                    <img src={user} alt="account icon image" className="h-6 w-6" />
-                    <span>{state.email}</span>
-                </div>) :
-                    (<div className="px-4">
+                {state.email
+                    ? (<div className="px-4 flex gap-4">
+                        <span>{state.email}</span>
+                        <span onClick={handleClick} className="cursor-pointer">Logout</span>
+                    </div>)
+                    :
+                    (<div className="px-4 flex gap-4">
                         <Link to="/login">Login</Link>
+                        <Link to="/signup">Signup</Link>
                     </div>)
                 }
             </div>

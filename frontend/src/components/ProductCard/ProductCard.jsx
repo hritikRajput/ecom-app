@@ -1,10 +1,13 @@
 import heart from "../../assets/heart.png"
 import heartFill from "../../assets/heart-fill.png";
 import useWishList from "../../context/useWishList";
+import useAuth from "../../context/AuthContext/useAuth";
 import { addWishListItem, removeWishListItem } from "../../services/wishListService";
 const ProductCard = ({ product }) => {
     const { _id, coverImage, title, author, price, discountedPrice } = product;
     const { state, dispatch } = useWishList();
+    const { state: authState, dispatch: authDispatch } = useAuth();
+    const token = authState.token
 
     const checkProductInWishList = (wishlist, product) => {
         return wishlist.length ? wishlist.some(wishListItem => wishListItem._id === product._id) : false;
@@ -12,21 +15,23 @@ const ProductCard = ({ product }) => {
     const isWishListed = checkProductInWishList(state.wishlist, product)
 
     const handleWishListClick = () => {
-        if (!isWishListed) {
-            addWishListItem(product)
-            dispatch({
-                type: "ADD_TO_WISHLIST",
-                payload: product,
+        if (token) {
+            if (!isWishListed) {
+                addWishListItem(product, token)
+                dispatch({
+                    type: "ADD_TO_WISHLIST",
+                    payload: product,
+                }
+                )
             }
-            )
-        }
-        else {
-            removeWishListItem(_id)
-            dispatch({
-                type: "REMOVE_FROM_WISHLIST",
-                payload: product,
+            else {
+                removeWishListItem(_id, token)
+                dispatch({
+                    type: "REMOVE_FROM_WISHLIST",
+                    payload: product,
+                }
+                )
             }
-            )
         }
     }
 

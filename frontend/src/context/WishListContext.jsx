@@ -23,7 +23,7 @@ const WishListProvider = ({ children }) => {
         });
       })()
     }
-  }, [token])
+  }, [authDispatch, token])
 
   return (
     <WishListContext.Provider value={{ state, dispatch }}>
