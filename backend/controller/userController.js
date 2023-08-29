@@ -61,10 +61,7 @@ const loginUser = async (req, res) => {
       expires: new Date(Date.now() + 8 * 60 * 60 * 1000),
       httpOnly: true,
     };
-    res
-      .status(200)
-      .cookie("token", token, options)
-      .json({ success: true, token, user });
+    res.status(200).cookie("token", token, options).json({ user });
   } catch (err) {
     console.error(err);
     res.status(500).json({
