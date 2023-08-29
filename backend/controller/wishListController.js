@@ -5,7 +5,7 @@ const addWishListItems = async (req, res) => {
     const newItems = req.body;
     const createdItems = await WishList.create({
       newItems,
-      userId: req.user,
+      userId: req.user._id,
     });
     res.status(201).json(createdItems);
   } catch (err) {
@@ -37,7 +37,7 @@ const removeWishListItem = async (req, res) => {
 
 const getWishListItems = async (req, res) => {
   try {
-    const wishListItems = await WishList.find({});
+    const wishListItems = await WishList.find({ userId: req.user._id });
     wishListItems.length
       ? res.status(200).json(wishListItems)
       : res.status(200).json([]);
