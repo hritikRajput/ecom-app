@@ -25,7 +25,7 @@ const Login = () => {
         });
         // save the user to local storage
         localStorage.setItem('user', JSON.stringify(data.user))
-        // navigate("/")
+        navigate("/")
     };
 
     return (

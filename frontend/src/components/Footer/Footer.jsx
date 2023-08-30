@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 const Footer = () => {
 
     return (
         <footer className="p-16 bg-secondary-dark text-white">
             <div className="w-1/2 mx-auto">
                 <ul className="flex justify-between">
-                    <li>About</li>
+                    <li><Link to="/about">About</Link></li>
                     <li>Contact</li>
                 </ul>
             </div>

@@ -5,6 +5,7 @@ import WishList from "./pages/WishList/WishList";
 import Signup from "./pages/Auth/Signup";
 import Login from "./pages/Auth/Login";
 import Cart from "./pages/Cart/Cart";
+import About from "./pages/About/About";
 const App = () => {
     return (
         <div className="font-baskerville min-h-[100vh]">
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </div>
     )

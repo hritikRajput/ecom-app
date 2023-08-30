@@ -10,7 +10,7 @@ import useWishList from "../../context/useWishList";
 const Header = () => {
     const navigate = useNavigate();
     const { dispatch: filterDispatch } = useFilter();
-    const { state: authState } = useAuth();
+    const { state: authState, dispatch: authDispatch } = useAuth();
     const { dispatch: wishListDispatch } = useWishList();
 
     const handleSearch = debounce((e) => {
@@ -22,7 +22,7 @@ const Header = () => {
 
     const handleClick = () => {
         localStorage.removeItem('user')
-        filterDispatch({ type: 'LOGOUT' })
+        authDispatch({ type: 'LOGOUT' })
         wishListDispatch({ type: "SET_WISHLIST", payload: [] })
         navigate("/")
     }
