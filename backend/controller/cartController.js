@@ -3,7 +3,10 @@ const Cart = require("../models/Cart");
 const addCartItems = async (req, res) => {
   try {
     const newItems = req.body;
-    const createdItems = await Cart.create(newItems);
+    const createdItems = await Cart.create({
+      ...newItems,
+      userId: req.user._id,
+    });
     res.status(201).json(createdItems);
   } catch (err) {
     console.error(err);
@@ -34,7 +37,7 @@ const removeCartItem = async (req, res) => {
 
 const getCartItems = async (req, res) => {
   try {
-    const cartItems = await Cart.find({});
+    const cartItems = await Cart.find({ userId: req.user._id });
     cartItems ? res.status(200).json(cartItems) : "No items in cart";
   } catch (err) {
     console.error(err);

@@ -12,6 +12,8 @@ const ProductCard = ({ product }) => {
 
     const token = authState.token
 
+    console.log("wishlist: ", wishListState.wishlist)
+
     const checkProductInWishList = (wishlist, product) => {
         return wishlist.length ? wishlist.some(wishListItem => wishListItem.productId === product._id) : false;
     }

@@ -7,15 +7,18 @@ import { addCartItem } from "../../services/cartService";
 import { useNavigate } from "react-router-dom";
 
 const WishListCard = ({ product }) => {
-    const { _id, coverImage, title, author, price, discountedPrice } = product;
+    const { _id, ...productWithoutId } = product;
+    const { coverImage, title, author, price, discountedPrice } = product;
+
     const { dispatch: wishListDispatch } = useWishList();
     const { state: cartState, dispatch: cartDispatch } = useCart();
-    const { state: authState, dispatch: authDispatch } = useAuth();
+    const { state: authState } = useAuth();
     const token = authState.token
     const navigate = useNavigate();
+    console.log("cart: ", cartState.cart)
 
     const checkInCart = (cart, product) => {
-        return cart.length ? cart.some(cartItem => cartItem._id === product._id) : false;
+        return cart.length ? cart.some(cartItem => cartItem.productId === product.productId) : false;
     }
     const isInCart = checkInCart(cartState.cart, product)
 
@@ -30,9 +33,10 @@ const WishListCard = ({ product }) => {
         }
     }
     const handleAddToCart = () => {
+        const cartItem = { ...productWithoutId }
         if (token) {
             if (!isInCart) {
-                addCartItem(product, token)
+                addCartItem(cartItem, token)
                 cartDispatch({
                     type: "ADD_TO_CART",
                     payload: product,

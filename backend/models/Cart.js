@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const User = require("./User");
+const Product = require("./Product");
 const { Schema } = mongoose;
 const cartSchema = new Schema(
   {
@@ -20,6 +22,14 @@ const cartSchema = new Schema(
     reviews: Array,
     dimensions: Object,
     isInStock: Boolean,
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: User,
+    },
+    productId: {
+      type: Schema.Types.ObjectId,
+      ref: Product,
+    },
   },
 
   {

@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
         cart: [],
     };
     const [state, dispatch] = useReducer(cartReducer, initialState);
-    const { state: authState, dispatch: authDispatch } = useAuth();
+    const { state: authState } = useAuth();
     const token = authState.token
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const CartProvider = ({ children }) => {
                 });
             })()
         }
-    }, [])
+    }, [token])
 
     return (
         <CartContext.Provider value={{ state, dispatch }}>
