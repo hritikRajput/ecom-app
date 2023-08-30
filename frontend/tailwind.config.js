@@ -7,6 +7,7 @@ export default {
         "color-primary": "#de2454",
         secondary: "#573ba3",
         "secondary-dark": "#2b0f42",
+        "color-accent": "#1fa5a3",
         "gray-lighter": "#cecdd1",
         "color-callout": "#f6f5f7",
         "color-border": "#e1e1e3",

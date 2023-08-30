@@ -1,16 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartCard from "../../components/CartCard/CartCard";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header";
 import useCart from "../../context/CartContext/useCart";
 import { initiateRazorpayPayment } from "../../services/checkOutService";
+import useAuth from "../../context/AuthContext/useAuth";
 
 const Cart = () => {
-    const { state: { cart } } = useCart();
+    const {
+        state: { cart },
+    } = useCart();
     const navigate = useNavigate();
+    const { state: authState } = useAuth();
+    const token = authState.token;
+    console.log("token: ", token);
+
     const totalPrice = () => {
         return 100;
-    }
+    };
     const loadScript = (src) => {
         return new Promise((resolve, reject) => {
             const script = document.createElement("script");
@@ -35,33 +42,57 @@ const Cart = () => {
                 });
                 return;
             }
-            initiateRazorpayPayment(navigate)
+            initiateRazorpayPayment(navigate);
+        } catch (err) {
+            console.error(err);
         }
-        catch (err) {
-            console.error(err)
-        }
-    }
+    };
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
             <div className="px-40 py-8 flex-grow">
                 <div className="max-w-[1024px] mx-auto">
                     <h1 className="text-4xl text-center mb-4 text-seconday-dark">Cart</h1>
-                    <div className="text-right"> <button className="uppercase rounded bg-color-primary border-2 border-solid border-color-primary text-opacity-1 text-white font-bold px-6 py-2" onClick={() => displayRazorpay(navigate)}>Checkout (Total: &#8377;{totalPrice().toFixed(2)})</button></div>
-                    <div className="grid grid-cols-layout-cart grid-rows-1 font-bold gap-x-4 ">
-                        <h3 className="col-start-1 col-end-3 p-4">Item</h3>
-                        <h3 className="col-start-3 col-end-4 p-4">Quantity</h3>
-                        <h3 className="col-start-4 col-end-5 p-4">Price</h3>
-                    </div>
-                    <div className="w-full">
-                        {cart.map((product) => < CartCard key={product._id} product={product} />)}
-                    </div>
+                    {token ? (
+                        <div>
+                            <div className="text-right">
+                                {" "}
+                                <button
+                                    className="uppercase rounded bg-color-primary border-2 border-solid border-color-primary text-opacity-1 text-white font-bold px-6 py-2"
+                                    onClick={() => displayRazorpay(navigate)}
+                                >
+                                    Checkout (Total: &#8377;{totalPrice().toFixed(2)})
+                                </button>
+                            </div>
+                            <div className="grid grid-cols-layout-cart grid-rows-1 font-bold gap-x-4 ">
+                                <h3 className="col-start-1 col-end-3 p-4">Item</h3>
+                                <h3 className="col-start-3 col-end-4 p-4">Quantity</h3>
+                                <h3 className="col-start-4 col-end-5 p-4">Price</h3>
+                            </div>
+                            <div className="w-full">
+                                {cart.map((product) => (
+                                    <CartCard key={product._id} product={product} />
+                                ))}
+                            </div>
+                        </div>
+
+                    ) : (
+                        <div className="text-color-dark-text max-w-[1024px] mx-auto text-center">
+                            <h2 className="text-2xl mb-4">Missing your cart?</h2>
+                            <p className="mb-6">Login to see what have you added in cart</p>
+                            <Link to="/login">
+                                <button className="px-2 py-1 border-solid border-2 bg-color-accent text-white rounded">
+                                    Login
+                                </button>
+                            </Link>
+                        </div>
+                    )}
+
                 </div>
             </div>
             <Footer />
         </div>
-
-    )
-}
+    );
+};
 
 export default Cart;
