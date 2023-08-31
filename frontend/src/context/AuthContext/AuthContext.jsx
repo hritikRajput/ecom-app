@@ -11,6 +11,8 @@ const AuthProvider = ({ children }) => {
         password: "",
         token: "",
     };
+
+
     const [state, dispatch] = useReducer(authReducer, initialState);
 
     useEffect(() => {

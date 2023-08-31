@@ -18,11 +18,16 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("I am submitted")
         const data = await logIn({
             email: state.email,
             password: state.password,
         });
+
+        dispatch({
+            type: 'UPDATE_FIELD',
+            payload: data.user,
+        })
+
         // save the user to local storage
         localStorage.setItem('user', JSON.stringify(data.user))
         navigate("/")
