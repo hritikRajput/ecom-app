@@ -11,6 +11,7 @@ const WishList = () => {
     const { state: authState } = useAuth();
 
     const token = authState.token
+    console.log("wishlist:", wishlist)
 
     return (
         <div className="flex flex-col min-h-screen">

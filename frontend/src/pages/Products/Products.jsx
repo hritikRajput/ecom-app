@@ -12,7 +12,7 @@ const Products = () => {
     const [products, setProducts] = useState([])
     const { state } = useFilter();
     const { state: { wishlist } } = useWishList();
-    console.log(wishlist)
+    console.log("wishlist: ", wishlist)
     useEffect(() => {
         (async () => {
             const data = await getAllProducts();

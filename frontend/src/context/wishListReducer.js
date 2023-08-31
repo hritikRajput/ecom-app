@@ -14,7 +14,7 @@ const wishListReducer = (state, action) => {
       return {
         ...state,
         wishlist: state.wishlist.filter(
-          (item) => item._id !== action.payload._id
+          (item) => item.productId !== action.payload.productId
         ),
       };
     case "SET_WISHLIST":

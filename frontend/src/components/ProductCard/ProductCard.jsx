@@ -12,30 +12,30 @@ const ProductCard = ({ product }) => {
 
     const token = authState.token
 
-    console.log("wishlist: ", wishListState.wishlist)
-
     const checkProductInWishList = (wishlist, product) => {
         return wishlist.length ? wishlist.some(wishListItem => wishListItem.productId === product._id) : false;
     }
     const isWishListed = checkProductInWishList(wishListState.wishlist, product)
 
-    const handleWishListClick = () => {
+    const handleWishListClick = async () => {
         const wishListItem = { ...productWithoutId, productId: product._id }
         if (token) {
+            console.log(isWishListed)
             if (!isWishListed) {
-                addWishListItem(wishListItem, token)
+                console.log("wishlistProductId: ", wishListItem.productId)
+                console.log("productId:", _id, product._id)
+                await addWishListItem(wishListItem, token)
                 wishListDispatch({
                     type: "ADD_TO_WISHLIST",
-                    payload: product,
+                    payload: wishListItem,
                 }
                 )
             }
             else {
-                const wishListId = wishListState.wishlist.filter((wishlistitem) => wishlistitem.productId === _id)[0]._id
-                removeWishListItem(wishListId, token)
+                await removeWishListItem(_id, token)
                 wishListDispatch({
                     type: "REMOVE_FROM_WISHLIST",
-                    payload: product,
+                    payload: wishListItem,
                 }
                 )
             }

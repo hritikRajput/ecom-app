@@ -24,7 +24,7 @@ const WishListCard = ({ product }) => {
 
     const handleWishListClick = () => {
         if (token) {
-            removeWishListItem(_id, token)
+            removeWishListItem(product.productId, token)
             wishListDispatch({
                 type: "REMOVE_FROM_WISHLIST",
                 payload: product,

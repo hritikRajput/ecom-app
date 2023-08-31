@@ -26,13 +26,16 @@ const addWishListItem = async (product, token) => {
     console.error("Error in adding product to wishlist", err);
   }
 };
-const removeWishListItem = async (_id, token) => {
+const removeWishListItem = async (productId, token) => {
   try {
-    const { data } = await axios.delete(`${BASE_URL}api/wishlist/${_id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const { data } = await axios.delete(
+      `${BASE_URL}api/wishlist/${productId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return data;
   } catch (err) {
     console.error("Error in removing product from wishlist", err);
