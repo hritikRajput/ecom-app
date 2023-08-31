@@ -20,9 +20,12 @@ const addWishListItems = async (req, res) => {
 };
 
 const removeWishListItem = async (req, res) => {
-  const itemId = req.params.id;
+  const productId = req.params.id;
   try {
-    const removedItem = await WishList.findByIdAndDelete(itemId);
+    const removedItem = await WishList.findOneAndDelete({
+      productId: productId,
+      userId: req.user._id,
+    });
 
     if (!removedItem) {
       return res.status(404).json({ message: "Item not found" });
