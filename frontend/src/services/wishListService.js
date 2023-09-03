@@ -2,7 +2,6 @@ import axios from "axios";
 const BASE_URL = "https://hritikrajput-ecommercebackend.onrender.com/";
 
 const getWishListItems = async (token) => {
-  console.log("I am in getWishList:", token);
   try {
     const { data } = await axios.get(`${BASE_URL}api/wishlist`, {
       headers: {
