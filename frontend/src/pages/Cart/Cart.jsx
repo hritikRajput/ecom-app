@@ -13,7 +13,6 @@ const Cart = () => {
     const navigate = useNavigate();
     const { state: authState } = useAuth();
     const token = authState.token;
-    console.log("token: ", token);
 
     const totalPrice = () => {
         return 100;

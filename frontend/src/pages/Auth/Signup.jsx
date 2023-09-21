@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import useAuth from "../../context/AuthContext/useAuth";
@@ -5,10 +6,10 @@ import { signUp } from "../../services/authService"
 
 const Signup = () => {
     const { state, dispatch } = useAuth();
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log("name:" + name, "value:" + value)
         dispatch({
             type: 'UPDATE_FIELD',
             payload: { [name]: value },
@@ -23,7 +24,9 @@ const Signup = () => {
             number: state.number,
             password: state.password,
         });
-        console.log(data)
+        if (data) {
+            navigate("/login")
+        }
     };
 
     return (

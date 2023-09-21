@@ -51,7 +51,7 @@ const Header = () => {
                 <div className="px-2">
                     <Link to="/cart"><img src={shoppingCart} alt="cart icon image" className="h-6 w-6" /></Link>
                 </div>
-                {authState.email
+                {authState.token && authState.email
                     ? (<div className="px-4 flex gap-4">
                         <span>{authState.email}</span>
                         <span onClick={handleClick} className="cursor-pointer">Logout</span>

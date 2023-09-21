@@ -3,34 +3,37 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import useAuth from "../../context/AuthContext/useAuth";
 import { logIn } from "../../services/authService";
+import { useState } from "react";
 
 const Login = () => {
+    const [formData, setFormData] = useState()
+    const [loginError, setLoginError] = useState("")
     const { state, dispatch } = useAuth();
     const navigate = useNavigate()
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log("name:" + name, "value:" + value)
-        dispatch({
-            type: 'UPDATE_FIELD',
-            payload: { [name]: value },
-        })
+        setFormData({ ...formData, [name]: value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = await logIn({
-            email: state.email,
-            password: state.password,
+            email: formData.email,
+            password: formData.password,
         });
-
-        dispatch({
-            type: 'UPDATE_FIELD',
-            payload: data.user,
-        })
-
-        // save the user to local storage
-        localStorage.setItem('user', JSON.stringify(data.user))
-        navigate("/")
+        if (data?.user) {
+            dispatch({
+                type: 'UPDATE_FIELD',
+                payload: data.user,
+            })
+            // save the user to local storage
+            localStorage.setItem('user', JSON.stringify(data.user))
+            setLoginError("")
+            navigate("/")
+        }
+        else {
+            setLoginError("Please login with correct email and password")
+        }
     };
 
     return (
@@ -52,6 +55,7 @@ const Login = () => {
                             <button type="submit" className="px-2 py-1 border-solid border-2 bg-color-primary text-white rounded-md w-full">LOGIN</button>
                         </form>
                     </div >
+                    {loginError && <div className="text-red-500 p-2">{loginError}</div>}
                 </div >
             </main>
             <Footer />
