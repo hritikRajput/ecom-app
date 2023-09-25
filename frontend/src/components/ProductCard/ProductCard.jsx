@@ -3,12 +3,13 @@ import heartFill from "../../assets/heart-fill.png";
 import useWishList from "../../context/useWishList";
 import useAuth from "../../context/AuthContext/useAuth";
 import { addWishListItem, removeWishListItem } from "../../services/wishListService";
+import { useNavigate } from "react-router-dom";
 const ProductCard = ({ product }) => {
-    const { _id, ...productWithoutId } = product;
-    const { coverImage, title, author, price, discountedPrice } = product;
-
     const { state: wishListState, dispatch: wishListDispatch } = useWishList();
     const { state: authState } = useAuth();
+    const navigate = useNavigate()
+    const { _id, ...productWithoutId } = product;
+    const { coverImage, title, author, price, discountedPrice } = product;
 
     const token = authState.token
 
@@ -16,6 +17,11 @@ const ProductCard = ({ product }) => {
         return wishlist.length ? wishlist.some(wishListItem => wishListItem.productId === product._id) : false;
     }
     const isWishListed = checkProductInWishList(wishListState.wishlist, product)
+
+    const handleProductClick = () => {
+        console.log(product)
+        navigate("/description")
+    }
 
     const handleWishListClick = async () => {
         const wishListItem = { ...productWithoutId, productId: product._id }
@@ -43,7 +49,7 @@ const ProductCard = ({ product }) => {
     }
 
     return (
-        <div className="bg-white grid grid-cols-1 grid-rows-layout-5 booklist-book" >
+        <div onClick={handleProductClick} className="bg-white grid grid-cols-1 grid-rows-layout-5 booklist-book" >
             <div className="row-span-1 relative w-full pb-[145%] rounded self-stretch bg-slate-50">
                 <a href="#" className="p-4 absolute top-0 left-0 right-0 bottom-0 flex">
                     <div className="rounded relative shadow-product-image transition ease-in duration-200 flex flex-1 product-image">
