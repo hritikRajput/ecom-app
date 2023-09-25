@@ -9,6 +9,7 @@ export default {
         "secondary-dark": "#2b0f42",
         "color-accent": "#1fa5a3",
         "gray-lighter": "#cecdd1",
+        "bg-light": "#efeef5",
         "color-callout": "#f6f5f7",
         "color-border": "#e1e1e3",
         "color-dark-text": "#2c293b",
@@ -18,6 +19,7 @@ export default {
       },
       gridTemplateColumns: {
         "layout-cart": "2fr 8fr 2fr 2fr 1fr",
+        "auto-1": "auto minmax(0,1fr)",
       },
       gridTemplateRows: {
         "layout-5": "auto auto auto 1fr auto",

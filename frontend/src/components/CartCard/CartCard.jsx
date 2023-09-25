@@ -36,7 +36,7 @@ const CartCard = ({ product }) => {
                 <div className="text-sm ">{author}</div>
             </div>
             <div className="text-sm text-right">
-                <input className="p-2 border-2 border-solid border-color-border rounded text-color-dark-text outline-none w-16 text-right" type="number" min={1} max={5} />
+                <input className="p-2 border-2 border-solid border-color-border rounded text-color-dark-text outline-none w-16 text-right" type="number" min={1} max={1} />
             </div>
             <div className="pb-4 text-sm flex flex-col items-center text-right">
                 <span className="line-through mr-2 text-color-primary font-bold">&#8377;{price}</span>

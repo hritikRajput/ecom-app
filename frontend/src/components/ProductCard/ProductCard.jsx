@@ -19,8 +19,9 @@ const ProductCard = ({ product }) => {
     const isWishListed = checkProductInWishList(wishListState.wishlist, product)
 
     const handleProductClick = () => {
+        const productUrl = `/description/${product._id}`;
         console.log(product)
-        navigate("/description")
+        navigate(productUrl)
     }
 
     const handleWishListClick = async () => {

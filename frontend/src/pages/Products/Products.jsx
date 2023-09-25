@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getAllProducts from "../../services/productsService";
+import { getAllProducts } from "../../services/productsService";
 import Header from "../../components/Header/Header"
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { CategoryFilter, PriceFilter, RatingFilter } from "../../components/Filters"
